@@ -1,0 +1,28 @@
+{
+  "name": "functional-typescript",
+  "version": "1.0.0",
+  "description": "typescript implementation of algebraic data types and functional programming patterns",
+  "main": "index.ts",
+  "scripts": {
+    "start": "./node_modules/.bin/ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aYo-dev/functional-typescript.git"
+  },
+  "keywords": [
+    "functional programming",
+    "typescript",
+    "category theory"
+  ],
+  "author": "Asen Yovchev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aYo-dev/functional-typescript/issues"
+  },
+  "homepage": "https://github.com/aYo-dev/functional-typescript#readme",
+  "dependencies": {
+    "ts-node": "8.0.3",
+    "typescript": "3.4.1"
+  }
+}
