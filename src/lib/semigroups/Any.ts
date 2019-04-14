@@ -1,4 +1,4 @@
-import { ISemigroup } from "../interfaces/semigroup";
+import { ISemigroup } from "../../interfaces/semigroup";
 
 export const Any = (x: boolean): ISemigroup<boolean> => ({
   get: () => x,
