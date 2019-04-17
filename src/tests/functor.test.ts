@@ -1,12 +1,12 @@
 import { Right } from '../lib/Right';
 
-test('Test identity law', () => {
+test.only('Test identity law', () => {
   const init = Right(Date.now());
   const equal = init.map(value => value);
   const notEqual = init.map(value => value * 2);
 
-  expect(init.fold(_ => _, value => value)).toBe(equal.fold(_ => _, value => value));
-  expect(init.fold(_ => _, value => value)).not.toBe(notEqual.fold(_ => _, value => value));
+  expect(init.fold(_ => _, value => value)).toEqual(equal.fold(_ => _, value => value));
+  expect(init.fold(_ => _, value => value)).not.toEqual(notEqual.fold(_ => _, value => value));
 });
 
 test('Test composition law', () => {
