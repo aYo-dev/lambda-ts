@@ -1,11 +1,9 @@
-import { IFunctor } from "../../interfaces/functor";
+import { ILazyBoxFunctor } from "../../interfaces/lazyBoxFunctor";
 
-type ILazyBox = <T, A>() => A;
-
-const LazyBox = <T>(g: () => T): IFunctor<() => T> => ({
-  map: <A>(f: (v: T) => A): IFunctor<() => A> => LazyBox(() => f(g())),
-  fold: <A>(f: (v: T) => A): A => f(g()),
-  inspect: (v): IFunctor<() => T> => {
+const LazyBox = (g: Function): ILazyBoxFunctor<Function> => ({
+  map: (f: Function): ILazyBoxFunctor<Function> => LazyBox(() => f(g())),
+  fold: <A>(f: Function): A => f(g()),
+  inspect: (v): ILazyBoxFunctor<Function> => {
     console.log(v, g);
     return LazyBox(g);
   }
