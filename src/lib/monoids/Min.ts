@@ -1,6 +1,6 @@
 import { IMonoid } from "../../interfaces/monoid";
 
-export const Min = (x: number): IMonoid<number> => ({
+export const Min = (x: number = Infinity): IMonoid<number> => ({
   get: () => x,
   concat: (y) => Min(x > y.get() ?  y.get() : x),
   inspect: (key) => {
