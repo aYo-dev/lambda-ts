@@ -1,6 +1,6 @@
 import { Right } from '../lib/Right';
 
-test.only('Test identity law', () => {
+test('Test identity law', () => {
   const init = Right(Date.now());
   const equal = init.map(value => value);
   const notEqual = init.map(value => value * 2);
