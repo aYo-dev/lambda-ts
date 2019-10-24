@@ -1,6 +1,6 @@
 {
-  "name": "functional-typescript",
-  "version": "1.0.0",
+  "name": "lambda-ts",
+  "version": "1.0.1",
   "description": "typescript implementation of algebraic data types and functional programming patterns",
   "main": "index.ts",
   "scripts": {
