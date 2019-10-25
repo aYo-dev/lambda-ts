@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "pretty": true,
     "module": "commonjs",
+    "declaration": true,
     "outDir": "./dist/",
     "target": "es6",
     "sourceMap": true,
