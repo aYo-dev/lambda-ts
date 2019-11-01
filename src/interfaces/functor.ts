@@ -1,5 +1,5 @@
 export interface IFunctor<T> {
   map: <A>(f: (v: T) => A) => IFunctor<A>;
-  fold: (f: (v: T) => T, g: (v: T) => T) => T;
+  fold: <A>(f: (v: T) => A, g: (v: T) => T) => T | A;
   inspect: (v: string | number) => IFunctor<T>; // Only for test purposes
 }
