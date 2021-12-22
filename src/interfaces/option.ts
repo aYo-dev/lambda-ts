@@ -1,9 +1,9 @@
-import { IMonad } from "./monad";
+import { Monad } from "./monad";
 
 export interface  IOption<T> {
-  map: <A>(f: (v: IMonad<T>) => IMonad<A>) => IOption<A>;
-  flatMap: <A>(f: (v: T) => IMonad<A>) => IOption<A>,
+  map: <A>(f: (v: Monad<T>) => Monad<A>) => IOption<A>;
+  chain: <A>(f: (v: T) => Monad<A>) => IOption<A>,
   getOrElse: <A>(d: A) => T | A;
   fold: <A>(f: (v: T) => T, d: A) => T | A;
-  of: <A>(v: IMonad<A>) => IOption<A> 
+  of: <A>(v: Monad<A>) => IOption<A> 
 }

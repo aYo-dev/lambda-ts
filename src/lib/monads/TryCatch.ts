@@ -1,8 +1,8 @@
 import { Left } from "./Left";
 import { Right } from "./Right";
-import { IMonad } from "../../interfaces/monad";
+import { Monad } from "../../interfaces/monad";
 
-export const TryCatch = <T>(f: () => T): IMonad<T> => {
+export const tryCatch = <T>(f: () => T): Monad<T> => {
   try {
     return Right(f());
   } catch (e) {

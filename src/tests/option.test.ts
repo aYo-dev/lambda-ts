@@ -10,7 +10,7 @@ test('Test Option.getOrElse method with falsy value', () => {
 test('Test Option.getOrElse mehod with truly value', () => {
   const value = Either(8)
   .map(v => v.toString())
-  .map(v => v.concat(' limbs'))
+  .map((v: string) => v.concat(' limbs'))
   
   const init = Option(value);
 
@@ -22,17 +22,17 @@ test('Test Option.map method', () => {
   
   const init = Option(value)
   .map((v) => v.map((vv) => vv.toString()))
-  .map((v) => v.map((vv) => vv.concat(' limbs')));
+  .map((v) => v.map((vv: string) => vv.concat(' limbs')));
 
   expect(init.getOrElse('fallback')).toEqual('8 limbs');
 });
 
-test('Test Option.flatMap method', () => {
+test('Test Option.chain method', () => {
   const value = Either(8);
   
   const init = Option(value)
-  .flatMap((v) => Either(v.toString()))
-  .flatMap((v) => Either(v.concat(' limbs')));
+  .chain((v) => Either(v.toString()))
+  .chain((v) => Either(v.concat(' limbs')));
 
   expect(init.getOrElse('fallback')).toEqual('8 limbs');
 });
@@ -51,7 +51,7 @@ test('Test Option.fold method with truly value', () => {
   .map(v => v.toString());
   
   const init = Option(value)
-  .fold((v) => v.concat(' limbs'), 'fallback')
+  .fold((v: string) => v.concat(' limbs'), 'fallback')
 
   expect(init).toEqual('8 limbs');
 });

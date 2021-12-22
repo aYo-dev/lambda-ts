@@ -1,8 +1,8 @@
-import { IMonad } from "../../interfaces/monad";
+import { Monad } from "../../interfaces/monad";
 import { Right } from "./Right";
 import { Left } from "./Left";
 
-const Either = <T>(value: T): IMonad<T> => value ? Right.of(value) : Left.of(value);
+const Either = <T>(value: T): Monad<T> => value ? Right(value) : Left(value);
 
 Either.of = Either;
 
