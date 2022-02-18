@@ -1,12 +1,3 @@
-import { IFunctor } from "./functor";
-
-export interface IMonad<T> extends IFunctor<T>{
-  of: (v: T) => IMonad<T>;
-  flatMap: <A>(f: (v: T) => IMonad<A>) => IMonad<A>;
-  map: <A>(f: (v: T) => A) => IMonad<A>;
-  inspect: (v: string) => IMonad<T>; // Only for test purposes
-}
-
 export type Monad<T> = {
   map: <A>(f: (v: T) => A) => Monad<A | T>;
   chain: <A>(f: (v: T) => Monad<A>) => Monad<A>;

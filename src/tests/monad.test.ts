@@ -1,5 +1,4 @@
 import { Right } from '../lib/monads/Right';
-import { IMonad } from '../interfaces/monad';
 
 test('Test Monad - Right identity law', () => {
   const x = Right('test').chain(value => Right.of(value))
