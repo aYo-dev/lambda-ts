@@ -16,3 +16,11 @@ test('Test Either functor with negative value', () => {
 
   expect(x.fold(_ => _, value => value)).toBeFalsy();
 });
+
+test('test 1', () => {
+  const testM = Either('aum');
+  const test2 = testM
+    .map(v => `${v}...`)
+
+  expect(test2.fold(_ => _, v => v)).toEqual('aum...');
+});
